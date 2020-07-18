@@ -9,9 +9,9 @@ BACKGROUND_COLOR = 'gray18'
 FOREGROUND_COLOR = 'snow'
 BOX_BACKGROUND_COLOR = "gray21"
 BOX_FOREGROUND_COLOR = "snow"
-class MagicSearch(tk.Frame):
-    def __init__(self, parent, *args, **kwargs):
-        super().__init__(parent, *args, **kwargs)
+class MagicSearch(tk.Toplevel):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.configure(background=BACKGROUND_COLOR)
         s = ttk.Style()
         s.theme_use('clam')
@@ -65,11 +65,11 @@ class MagicSearch(tk.Frame):
 
 
 if __name__== "__main__":
-        app = tk.Tk()
+        app = MagicSearch()
         app.geometry("1000x150")
         app.configure(background="gray18")
-        frame = MagicSearch(app)
 
-        frame.grid(row=0)
+
+
         app.mainloop()
 
